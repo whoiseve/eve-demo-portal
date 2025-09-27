@@ -357,7 +357,7 @@ export default function AdminPage() {
     return (
       <div className="card">
         <h2 className="text-xl font-semibold mb-2">Admin sign-in</h2>
-        <p className="opacity-80 mb-4">Use your email (must be in the <code>admins</code> table).</p>
+        <p className="opacity-80 mb-4">Please Login</p>
         <button className="btn" onClick={async () => {
           const email = prompt("Enter email for magic link sign-in:");
           if (!email) return;
@@ -367,7 +367,7 @@ export default function AdminPage() {
           });
           if (error) alert(error.message);
           else alert("Check your email for a magic link.");
-        }}>Send magic link</button>
+        }}>Login</button>
       </div>
     );
   }
