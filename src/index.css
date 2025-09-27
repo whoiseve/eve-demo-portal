@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --ux-black:#161a1b;
+  --ux-offwhite:#e9e5e4;
+  --ux-orange:#f87500;
+  --ux-red:#d61106;
+}
+
+html, body, #root {
+  height: 100%;
+  background: var(--ux-black);
+  color: var(--ux-offwhite);
+  font-synthesis-weight: none;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center rounded-xl px-4 py-2 font-medium transition
+         bg-uxorange text-uxblack hover:opacity-90 disabled:opacity-40;
+}
+.input {
+  @apply w-full rounded-xl bg-uxgray/50 border border-uxgray px-3 py-2 text-uxoffwhite
+         placeholder:opacity-60 focus:outline-none focus:ring-2 focus:ring-uxorange/60;
+}
+.card {
+  @apply rounded-2xl border border-uxgray/70 bg-uxgray/20 p-4;
+}
