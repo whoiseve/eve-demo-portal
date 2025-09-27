@@ -1,4 +1,4 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 export default function App() {
   return (
@@ -8,9 +8,6 @@ export default function App() {
           <div className="text-xl tracking-widest">
             EVE <span className="text-uxorange">•</span> DEMOS
           </div>
-          <nav className="text-sm opacity-80">
-            <Link to="/admin" className="hover:opacity-100">Admin</Link>
-          </nav>
         </div>
       </header>
       <main className="mx-auto max-w-4xl px-4 py-8">
