@@ -259,6 +259,12 @@ export default function AdminPage() {
     await Promise.all([fetchPlaying(), fetchQueue()]);
   };
 
+  // Add with your other action helpers (near pickNext / accept / deny)
+const sendTransport = async (action) => {
+  await supabase.from("admin_actions").insert({ action, payload: {} });
+};
+
+
   const acceptNowPlaying = async () => {
     const id = playing?.submission?.id;
     if (!id) return;
@@ -412,6 +418,8 @@ export default function AdminPage() {
               </div>
             </div>
             <div className="shrink-0 flex gap-2">
+              <button className="btn" onClick={() => sendTransport("PAUSE")}>Pause</button>
+              <button className="btn" onClick={() => sendTransport("RESUME")}>Resume</button>
               <button className="btn" onClick={() => openExternal(playing.submission.soundcloud_url)}>Play</button>
               <button className="btn" onClick={acceptNowPlaying}>Accept → Finalists</button>
               <button className="btn" onClick={denyNowPlaying}>Deny → Previous</button>
